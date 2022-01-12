@@ -47,4 +47,7 @@ dependencies {
     //image labeling
     implementation 'com.google.mlkit:image-labeling:17.0.6'
 
+    //auth
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+    implementation 'com.google.android.gms:play-services-auth:20.0.1'
 }
