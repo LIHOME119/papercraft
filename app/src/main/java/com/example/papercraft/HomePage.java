@@ -33,8 +33,9 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(),LoginPage.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getApplicationContext(),LoginPage.class);
+//                startActivity(intent);
+                finish();
             }
         });
     }
