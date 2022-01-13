@@ -1,12 +1,15 @@
 package com.example.papercraft;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
@@ -17,6 +20,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
  */
 public class SignUpFragment extends BottomSheetDialogFragment {
 
+
+    private BottomSheetListener mListener;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,6 +66,32 @@ public class SignUpFragment extends BottomSheetDialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false);
+//        return inflater.inflate(R.layout.fragment_sign_up, container, false);
+        View v = inflater.inflate(R.layout.fragment_sign_up, container, false);
+
+        Button comfirmSignup_btn = v.findViewById(R.id.btn_comfirmsignup);
+        comfirmSignup_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onButtonClicked("clicked");
+                dismiss();
+            }
+        });
+        return v;
+    }
+    public interface BottomSheetListener {
+        void onButtonClicked(String text);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try {
+            mListener = (BottomSheetListener) context;
+        }catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+            + " must implement BottomSheetListener");
+        }
+
     }
 }

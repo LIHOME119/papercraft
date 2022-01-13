@@ -62,10 +62,16 @@ public class HomePage extends AppCompatActivity {
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
+                if (signInAccount!=null){
+                    FirebaseAuth.getInstance().signOut();
+                    finish();
+                }else {
+                    finish();
+                }
+
 //                Intent intent = new Intent(getApplicationContext(),LoginPage.class);
 //                startActivity(intent);
-                finish();
+
             }
         });
     }
