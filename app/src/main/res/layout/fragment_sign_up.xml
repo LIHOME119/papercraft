@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SignUpFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,9 +11,31 @@
 
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/hello_blank_fragment" />
+    <TextView
+        android:id="@+id/tv2"
+
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+    <TextView
+        android:id="@+id/tv3"
+
+        app:layout_constraintTop_toBottomOf="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+    <TextView
+        android:id="@+id/tv4"
+
+        app:layout_constraintTop_toBottomOf="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
 
 
 

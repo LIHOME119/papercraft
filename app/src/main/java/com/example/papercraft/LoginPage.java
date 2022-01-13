@@ -3,7 +3,7 @@ package com.example.papercraft;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -57,7 +57,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SignUpFragment signUpFragment = new SignUpFragment();
-                signUpFragment.s
+                signUpFragment.show(getSupportFragmentManager(), signUpFragment.getTag());
 
             }
         });
