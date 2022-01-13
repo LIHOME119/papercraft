@@ -18,6 +18,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,7 +32,7 @@ public class LoginPage extends AppCompatActivity {
     private static final int RC_SIGN_IN = 123;
     private GoogleSignInClient mGoogleSignInClient;
 
-    Button login_btn;
+    Button login_btn, signup_btn;
     private FirebaseAuth mAuth;
 
     @Override
@@ -51,6 +52,15 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
         mAuth = FirebaseAuth.getInstance();
         createRequest();
+        signup_btn=findViewById(R.id.btn_signup);
+        signup_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SignUpFragment signUpFragment = new SignUpFragment();
+                signUpFragment.s
+
+            }
+        });
         login_btn = findViewById(R.id.btn_login);
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override

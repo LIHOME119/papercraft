@@ -31,6 +31,7 @@ public class HomePage extends AppCompatActivity {
         homeLoginName_tv=findViewById(R.id.tv_homeLoginName);
         logout_btn=findViewById(R.id.btn_logout);
         map_btn=findViewById(R.id.btn_map);
+        //fingerprint
         personalInfo_btn=findViewById(R.id.btn_verify);
         personalInfo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +45,7 @@ public class HomePage extends AppCompatActivity {
                 getPrompt().authenticate(promptInfo);
             }
         });
+        //google map
         map_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +53,7 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //Logout
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
         if(signInAccount != null){
             homeLoginName_tv.setText(signInAccount.getDisplayName());
@@ -66,7 +69,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
     }
-
+//fingerpirnt
     private BiometricPrompt getPrompt(){
         Executor executor = ContextCompat.getMainExecutor(this);
         BiometricPrompt.AuthenticationCallback callback = new BiometricPrompt.AuthenticationCallback() {
