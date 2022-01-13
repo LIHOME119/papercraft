@@ -48,6 +48,7 @@ import static android.content.ContentValues.TAG;
 public class LoginPage extends AppCompatActivity implements SignUpFragment.BottomSheetListener {
 
 
+
     private static final int RC_SIGN_IN = 123;
     private GoogleSignInClient mGoogleSignInClient;
 
