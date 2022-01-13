@@ -88,7 +88,7 @@ public class SignUpFragment extends BottomSheetDialogFragment {
         comfirmSignup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onButtonClicked("clicked");
+                mListener.onButtonClicked("Sign up successful");
                 String username = signupUsername.getText().toString();
                 String email = signupMail.getText().toString();
                 String phoneNo = signupPhoneNo.getText().toString();

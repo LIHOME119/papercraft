@@ -53,12 +53,13 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //Logout
+        //google name and mail
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
         if(signInAccount != null){
             homeLoginName_tv.setText(signInAccount.getDisplayName());
             homeLoginMail_tv.setText(signInAccount.getEmail());
         }
+//        logout
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
