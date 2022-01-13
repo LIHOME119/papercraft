@@ -24,6 +24,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,6 +49,7 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
     Button  signup_btn;
     private FirebaseAuth mAuth;
 
+    TextInputLayout loginUsername_edt, loginPassword_edt;
     @Override
     protected void onStart() {
         super.onStart();
@@ -71,6 +74,8 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
         mAuth = FirebaseAuth.getInstance();
         createRequest();
 
+        loginPassword_edt=findViewById(R.id.LoginPassword);
+        loginUsername_edt=findViewById(R.id.LoginUsername);
         signup_btn=findViewById(R.id.btn_signup);
         signup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +86,7 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
             }
         });
         login_btn = findViewById(R.id.btn_login);
+        login_btn.setSize(SignInButton.SIZE_STANDARD);
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,6 +160,48 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
     public void onButtonClicked(String text) {
 
         Toast.makeText(LoginPage.this,text,Toast.LENGTH_SHORT).show();
+
+    }
+    private Boolean validateName(){
+        String val = loginUsername_edt.getEditText().getText().toString();
+
+        if(val.isEmpty()) {
+            loginUsername_edt.setError("Field cannot be empty");
+            return false;
+        }else if(val.length()>=15){
+            loginUsername_edt.setError("username too long");
+            return false;
+
+        }
+
+        else {
+            loginUsername_edt.setError(null);
+            loginUsername_edt.setErrorEnabled(false);
+            return true;
+        }
+
+    }
+    private Boolean validatePw(){
+        String val = loginPassword_edt.getEditText().getText().toString();
+//        String passwordVal = "^" +
+//                "(?=.*[a-zA-Z])" +
+//                "(?=.*[@#$%^&+=])" +
+//                "(?=\\s+$)" +
+//                ".{4,}" +
+//                "$";
+        if(val.isEmpty()){
+            loginPassword_edt.setError("Field cannot be empty");
+            return false;
+        }
+//        else if(!val.matches(passwordVal)){
+//            password.setError("Weak Password");
+//            return false;
+//
+//        }
+        else{
+            loginPassword_edt.setError(null);
+            return true;
+        }
 
     }
 }
