@@ -31,6 +31,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 
@@ -183,25 +189,70 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
     }
     private Boolean validatePw(){
         String val = loginPassword_edt.getEditText().getText().toString();
-//        String passwordVal = "^" +
-//                "(?=.*[a-zA-Z])" +
-//                "(?=.*[@#$%^&+=])" +
-//                "(?=\\s+$)" +
-//                ".{4,}" +
-//                "$";
+
         if(val.isEmpty()){
             loginPassword_edt.setError("Field cannot be empty");
             return false;
         }
-//        else if(!val.matches(passwordVal)){
-//            password.setError("Weak Password");
-//            return false;
-//
-//        }
+
         else{
             loginPassword_edt.setError(null);
             return true;
         }
+
+    }
+    public void loginuser(View view){
+        if (!validateName() | !validatePw()){
+            return;
+        }
+        else{
+            isUser();
+
+        }
+    }
+
+    private void isUser() {
+
+         String userEnteredUsername = loginUsername_edt.getEditText().getText().toString().trim();
+         String userEnteredPassword = loginPassword_edt.getEditText().getText().toString().trim();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+
+        Query checkUser = reference.orderByChild("username").equalTo(userEnteredUsername);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    loginUsername_edt.setError(null);
+                    loginPassword_edt.setErrorEnabled(false);
+                    String passwordFromDB = dataSnapshot.child(userEnteredUsername).child("password").getValue(String.class);
+
+                    Log.d(TAG, "on9"+passwordFromDB);
+                    Log.d(TAG, "on92"+dataSnapshot);
+                    Log.d(TAG, "on93"+dataSnapshot.child(userEnteredPassword));
+                    Log.d(TAG, "on94"+dataSnapshot.child(userEnteredPassword).child("password"));
+                    Log.d(TAG, "on95"+dataSnapshot.child(userEnteredPassword).child("password").getValue(String.class));
+
+                    if(passwordFromDB.equals(userEnteredPassword)){
+                        Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                        startActivity(intent);
+                    }else {
+                        loginPassword_edt.setError("Wrong Password");
+                        loginPassword_edt.requestFocus();
+                    }
+                }
+                else {
+                    loginUsername_edt.setError("No such User exist");
+                    loginPassword_edt.requestFocus();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
     }
 }
