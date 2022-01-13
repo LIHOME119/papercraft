@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.concurrent.Executor;
@@ -23,6 +25,8 @@ public class HomePage extends AppCompatActivity {
     TextView homeLoginName_tv, homeLoginMail_tv;
     Button logout_btn, map_btn, personalInfo_btn;
 
+    ExtendedFloatingActionButton logout_fbtn, shop_fbtn, custom_fbtn, info_fbtn;
+    FloatingActionButton map_fbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +79,14 @@ public class HomePage extends AppCompatActivity {
 
             }
         });
+
+        custom_fbtn=findViewById(R.id.fbtn_custom);
+        info_fbtn=findViewById(R.id.fbtn_fingerprint);
+        map_fbtn=findViewById(R.id.fbtn_map);
+        shop_fbtn=findViewById(R.id.fbtn_shop);
+        logout_btn=findViewById(R.id.fbtn_logout);
+        logout_fbtn.shir
+
     }
 //fingerpirnt
     private BiometricPrompt getPrompt(){

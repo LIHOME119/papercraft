@@ -47,6 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fbtn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -60,7 +61,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/extendedFloatingActionButton2"
+        android:id="@+id/fbtn_custom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -71,10 +72,10 @@
         app:icon="@drawable/ic_baseline_photo_camera_back_24"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/extendedFloatingActionButton" />
+        app:layout_constraintStart_toEndOf="@+id/fbtn_shop" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/extendedFloatingActionButton"
+        android:id="@+id/fbtn_shop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -87,6 +88,7 @@
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:layout_width="wrap_content"
+        android:id="@+id/fbtn_fingerprint"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="50dp"
@@ -95,11 +97,12 @@
         app:icon="@drawable/ic_baseline_fingerprint_24"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton" />
+        app:layout_constraintStart_toEndOf="@+id/fbtn_map" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fbtn_map"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="50dp"
@@ -107,7 +110,7 @@
         android:src="@drawable/ic_baseline_directions_run_24"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/extendedFloatingActionButton2" />
+        app:layout_constraintStart_toEndOf="@+id/fbtn_custom" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
