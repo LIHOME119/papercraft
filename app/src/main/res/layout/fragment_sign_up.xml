@@ -8,6 +8,16 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/SignUpUsername"
@@ -61,7 +71,15 @@
         android:id="@+id/btn_comfirmsignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Sign Up"
+
         app:layout_constraintTop_toBottomOf="@id/SignPassword"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_comfirmsignup" />
 
 
 

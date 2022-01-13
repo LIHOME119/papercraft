@@ -56,4 +56,10 @@ dependencies {
     implementation "androidx.biometric:biometric:1.1.0"
     //fragment
     implementation "androidx.fragment:fragment:$fragment_version"
+    //google signin ui
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+    //background
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+
+
 }
