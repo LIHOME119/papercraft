@@ -6,12 +6,17 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +24,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
  * create an instance of this fragment.
  */
 public class SignUpFragment extends BottomSheetDialogFragment {
+
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
 
     private BottomSheetListener mListener;
@@ -68,12 +76,27 @@ public class SignUpFragment extends BottomSheetDialogFragment {
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_sign_up, container, false);
         View v = inflater.inflate(R.layout.fragment_sign_up, container, false);
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("users");
 
+
+        EditText signupUsername =  v.findViewById(R.id.SignUpUsername);
+        EditText signupMail =  v.findViewById(R.id.SignUpemail);
+        EditText signupPhoneNo =  v.findViewById(R.id.SignUpPhoneNo);
+        EditText signupPassword =  v.findViewById(R.id.SignPassword);
         Button comfirmSignup_btn = v.findViewById(R.id.btn_comfirmsignup);
         comfirmSignup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mListener.onButtonClicked("clicked");
+                String username = signupUsername.getText().toString();
+                String email = signupMail.getText().toString();
+                String phoneNo = signupPhoneNo.getText().toString();
+                String password = signupPassword.getText().toString();
+                DatabaseReference signupRefernece = reference.child(username);
+//
+                UserSignupClass userSignupClass = new UserSignupClass(username, email, phoneNo, password);
+                signupRefernece.setValue(userSignupClass);
                 dismiss();
             }
         });
