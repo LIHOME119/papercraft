@@ -23,6 +23,7 @@ public class ShopPage extends AppCompatActivity {
     TextView god1_edt,god2_edt,god3_edt, total_tv;
     public static int defaltnum1, defaltnum2, defaltnum3, totalnum;
     ExtendedFloatingActionButton shopFire_fbtn, shopDone_fbtn;
+    // firebase realtime database reference
     DatabaseReference shoporderstatreference= dataRef.child("users").child(user).child("Order").child("order stats");
     DatabaseReference shoptotalinforeference= dataRef.child("users").child(user).child("Order").child("order informaiton");
     DatabaseReference shoptotalreference= dataRef.child("users").child(user).child("Order").child("order total");

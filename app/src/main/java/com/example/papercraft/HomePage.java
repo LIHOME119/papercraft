@@ -37,6 +37,7 @@ public class HomePage extends AppCompatActivity {
     FloatingActionButton map_fbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         homeLoginMail_tv=findViewById(R.id.tv_homeLoginMail);
