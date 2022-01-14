@@ -20,13 +20,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.IOException;
 import java.util.concurrent.Executor;
+
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
 
 public class HomePage extends AppCompatActivity {
 
     TextView homeLoginName_tv, homeLoginMail_tv;
     public static DatabaseReference dataRef= FirebaseDatabase.getInstance().getReference();
     public static String user;
+
 
     ExtendedFloatingActionButton logout_fbtn, shop_fbtn, custom_fbtn, info_fbtn;
     FloatingActionButton map_fbtn;
@@ -37,6 +42,14 @@ public class HomePage extends AppCompatActivity {
         homeLoginMail_tv=findViewById(R.id.tv_homeLoginMail);
         homeLoginName_tv=findViewById(R.id.tv_homeLoginName);
         custom_fbtn=findViewById(R.id.fbtn_custom);
+
+        GifImageView imageView1=findViewById(R.id.home_background);
+        try {
+            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.burning3);
+            imageView1.setImageDrawable(gifDrawable);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         custom_fbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
