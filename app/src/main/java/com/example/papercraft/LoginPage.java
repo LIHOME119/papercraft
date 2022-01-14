@@ -228,11 +228,11 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
                     loginPassword_edt.setErrorEnabled(false);
                     String passwordFromDB = dataSnapshot.child(userEnteredUsername).child("password").getValue(String.class);
 
-                    Log.d(TAG, "on9"+passwordFromDB);
-                    Log.d(TAG, "on92"+dataSnapshot);
-                    Log.d(TAG, "on93"+dataSnapshot.child(userEnteredPassword));
-                    Log.d(TAG, "on94"+dataSnapshot.child(userEnteredPassword).child("password"));
-                    Log.d(TAG, "on95"+dataSnapshot.child(userEnteredPassword).child("password").getValue(String.class));
+                    Log.d(TAG, "testing"+passwordFromDB);
+                    Log.d(TAG, "testing1"+dataSnapshot);
+                    Log.d(TAG, "testing2"+dataSnapshot.child(userEnteredPassword));
+                    Log.d(TAG, "testing3"+dataSnapshot.child(userEnteredPassword).child("password"));
+                    Log.d(TAG, "testing4"+dataSnapshot.child(userEnteredPassword).child("password").getValue(String.class));
 
                     if(passwordFromDB.equals(userEnteredPassword)){
                         HomePage.user=userEnteredUsername;
