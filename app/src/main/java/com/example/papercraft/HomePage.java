@@ -130,7 +130,7 @@ public class HomePage extends AppCompatActivity {
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 notifyUser("Authentication Succeeded!!");
-                Intent intent = new Intent(HomePage.this, MapsActivity.class);
+                Intent intent = new Intent(HomePage.this, Info.class);
                 startActivity(intent);
             }
 

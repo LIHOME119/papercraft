@@ -42,6 +42,18 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/edt_infophoneno"/>
 
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:id="@+id/fbtn_infoEdit"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/black"
+        app:icon="@drawable/ic_baseline_edit_24"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_infoaddress" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cd_god1"
         android:layout_width="match_parent"
@@ -72,9 +84,9 @@
 
 
             <TextView
-                android:id="@+id/tv_god1"
+                android:id="@+id/tv_infoOrderInfo"
                 android:layout_width="wrap_content"
-                android:layout_height="150sp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:text=""
