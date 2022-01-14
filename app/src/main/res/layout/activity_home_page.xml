@@ -22,29 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeLoginMail" />
 
-    <Button
-        android:id="@+id/btn_map"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_logout" />
-
-    <Button
-        android:id="@+id/btn_verify"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Verify"
-        app:layout_constraintBottom_toTopOf="@+id/btn_logout"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fbtn_logout"
@@ -64,10 +42,9 @@
         android:id="@+id/fbtn_custom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="@color/black"
-        android:text="custom"
         android:textColor="@color/white"
         app:icon="@drawable/ic_baseline_photo_camera_back_24"
         app:iconTint="@color/white"
@@ -78,7 +55,7 @@
         android:id="@+id/fbtn_shop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="40dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="@color/black"
         app:icon="@drawable/ic_baseline_shopping_cart_24"
@@ -87,13 +64,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:layout_width="wrap_content"
         android:id="@+id/fbtn_fingerprint"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="@color/black"
-        android:text="Info"
         app:icon="@drawable/ic_baseline_fingerprint_24"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -104,7 +80,7 @@
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="@color/white"
         android:src="@drawable/ic_baseline_directions_run_24"

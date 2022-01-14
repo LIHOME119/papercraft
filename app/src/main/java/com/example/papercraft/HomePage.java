@@ -23,7 +23,7 @@ import java.util.concurrent.Executor;
 public class HomePage extends AppCompatActivity {
 
     TextView homeLoginName_tv, homeLoginMail_tv;
-    Button logout_btn, map_btn, personalInfo_btn;
+
 
     ExtendedFloatingActionButton logout_fbtn, shop_fbtn, custom_fbtn, info_fbtn;
     FloatingActionButton map_fbtn;
@@ -33,11 +33,16 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         homeLoginMail_tv=findViewById(R.id.tv_homeLoginMail);
         homeLoginName_tv=findViewById(R.id.tv_homeLoginName);
-        logout_btn=findViewById(R.id.btn_logout);
-        map_btn=findViewById(R.id.btn_map);
+        custom_fbtn=findViewById(R.id.fbtn_custom);
+        info_fbtn=findViewById(R.id.fbtn_fingerprint);
+        map_fbtn=findViewById(R.id.fbtn_map);
+        shop_fbtn=findViewById(R.id.fbtn_shop);
+        logout_fbtn=findViewById(R.id.fbtn_logout);
+
+
         //fingerprint
-        personalInfo_btn=findViewById(R.id.btn_verify);
-        personalInfo_btn.setOnClickListener(new View.OnClickListener() {
+
+        info_fbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BiometricPrompt.PromptInfo promptInfo= new BiometricPrompt.PromptInfo.Builder()
@@ -50,7 +55,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
         //google map
-        map_btn.setOnClickListener(new View.OnClickListener() {
+        map_fbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),MapsActivity.class);
@@ -64,7 +69,7 @@ public class HomePage extends AppCompatActivity {
             homeLoginMail_tv.setText(signInAccount.getEmail());
         }
 //        logout
-        logout_btn.setOnClickListener(new View.OnClickListener() {
+        logout_fbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (signInAccount!=null){
@@ -80,12 +85,8 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        custom_fbtn=findViewById(R.id.fbtn_custom);
-        info_fbtn=findViewById(R.id.fbtn_fingerprint);
-        map_fbtn=findViewById(R.id.fbtn_map);
-        shop_fbtn=findViewById(R.id.fbtn_shop);
-        logout_btn=findViewById(R.id.fbtn_logout);
-        logout_fbtn.shir
+
+//        logout_fbtn.shir
 
     }
 //fingerpirnt
