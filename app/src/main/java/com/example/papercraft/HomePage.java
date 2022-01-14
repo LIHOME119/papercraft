@@ -26,6 +26,7 @@ public class HomePage extends AppCompatActivity {
 
     TextView homeLoginName_tv, homeLoginMail_tv;
     public static DatabaseReference dataRef= FirebaseDatabase.getInstance().getReference();
+    public static String user;
 
     ExtendedFloatingActionButton logout_fbtn, shop_fbtn, custom_fbtn, info_fbtn;
     FloatingActionButton map_fbtn;
@@ -36,6 +37,13 @@ public class HomePage extends AppCompatActivity {
         homeLoginMail_tv=findViewById(R.id.tv_homeLoginMail);
         homeLoginName_tv=findViewById(R.id.tv_homeLoginName);
         custom_fbtn=findViewById(R.id.fbtn_custom);
+        custom_fbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), customPaperCraft.class);
+                startActivity(intent);
+            }
+        });
         info_fbtn=findViewById(R.id.fbtn_fingerprint);
         map_fbtn=findViewById(R.id.fbtn_map);
         shop_fbtn=findViewById(R.id.fbtn_shop);
@@ -76,6 +84,7 @@ public class HomePage extends AppCompatActivity {
         if(signInAccount != null){
             homeLoginName_tv.setText(signInAccount.getDisplayName());
             homeLoginMail_tv.setText(signInAccount.getEmail());
+            user=signInAccount.getDisplayName();
             DatabaseReference namereference= dataRef.child("users").child(signInAccount.getDisplayName()).child("username");
             DatabaseReference mailreference= dataRef.child("users").child(signInAccount.getDisplayName()).child("email");
             namereference.setValue(signInAccount.getDisplayName());

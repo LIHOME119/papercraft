@@ -55,7 +55,7 @@
         android:id="@+id/fbtn_shop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="30dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="@color/black"
         app:icon="@drawable/ic_baseline_shopping_cart_24"

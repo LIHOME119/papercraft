@@ -61,7 +61,7 @@
                         android:layout_height="150sp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
-                        android:text=" Burning Package x1 \n Basic Paper craft x1 \n\n\n 100$"
+                        android:text=" Burning Package x1 \n Basic Paper craft x1 \n\n\n 125$"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/img_god1" />
 
@@ -136,7 +136,7 @@
                         android:layout_height="150sp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
-                        android:text=" Burning Package x1 \n Paper craft x10 \n Paper money Package x10 \n\n\n 300$"
+                        android:text=" Burning Package x1 \n Paper craft x10 \n Paper money Package x10 \n\n\n 398$"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/img_god2" />
 
@@ -214,7 +214,7 @@
                         android:layout_height="150sp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
-                        android:text=" Burning Package x5 \n Paper craft x50 \n Paper money Package x50 \n Full set Paper craft x10 \n Best Paper craft Package x10 \n\n\n 800$"
+                        android:text=" Burning Package x5 \n Paper craft x50 \n Paper money Package x50 \n Full set Paper craft x10 \n Best Paper craft Package x10 \n\n\n 888$"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/img_god3" />
 

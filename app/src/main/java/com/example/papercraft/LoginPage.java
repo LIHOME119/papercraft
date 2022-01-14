@@ -235,6 +235,7 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
                     Log.d(TAG, "on95"+dataSnapshot.child(userEnteredPassword).child("password").getValue(String.class));
 
                     if(passwordFromDB.equals(userEnteredPassword)){
+                        HomePage.user=userEnteredUsername;
                         Intent intent = new Intent(getApplicationContext(), HomePage.class);
                         startActivity(intent);
                     }else {

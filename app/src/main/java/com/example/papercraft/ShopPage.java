@@ -9,8 +9,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+
+import static com.example.papercraft.HomePage.dataRef;
+import static com.example.papercraft.HomePage.user;
 
 public class ShopPage extends AppCompatActivity {
 
@@ -18,6 +23,11 @@ public class ShopPage extends AppCompatActivity {
     TextView god1_edt,god2_edt,god3_edt, total_tv;
     public static int defaltnum1, defaltnum2, defaltnum3, totalnum;
     ExtendedFloatingActionButton shopFire_fbtn, shopDone_fbtn;
+    DatabaseReference shoporderstatreference= dataRef.child("users").child(user).child("Order").child("order stats");
+    DatabaseReference shoptotalinforeference= dataRef.child("users").child(user).child("Order").child("order informaiton");
+    DatabaseReference shoptotalreference= dataRef.child("users").child(user).child("Order").child("order total");
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +59,14 @@ public class ShopPage extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
+                                shoptotalreference.setValue("$"+totalnum);
+                                shoporderstatreference.setValue("Waiting to sacrifice");
+                                shoptotalinforeference.setValue("(Assistant customer to do sacrificing) \n"+
+                                        "Paper Craft Package 1 x"+defaltnum1+" \n"+
+                                        "Paper Craft Package 2 x"+defaltnum2+" \n"+
+                                        "Paper Craft Package 3 x"+defaltnum3+" \n");
+
+                                Toast.makeText(getApplicationContext(), "Thank you for using Sacrificing Assistant Service\nPlease check the progress in information page", Toast.LENGTH_SHORT).show();
 
                                 finish();
                             }
@@ -72,6 +90,14 @@ public class ShopPage extends AppCompatActivity {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                shoptotalreference.setValue("$"+totalnum);
+
+                                shoporderstatreference.setValue("Waiting to deliver");
+                                shoptotalinforeference.setValue("(Deliver service) \n"+
+                                        "Paper Craft Package 1 x"+defaltnum1+" \n"+
+                                        "Paper Craft Package 2 x"+defaltnum2+" \n"+
+                                        "Paper Craft Package 3 x"+defaltnum3+" \n");
+                                Toast.makeText(getApplicationContext(), "Thank you for using Deliver Service\nPlease check the progress in information page", Toast.LENGTH_SHORT).show();
 
 
 
