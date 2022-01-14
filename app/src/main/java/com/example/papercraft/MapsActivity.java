@@ -57,6 +57,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(boWahEffigies).title("Paper Craft shop: Bo Wah Effigies"));
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(boWahEffigies));
 
+        LatLng PaoYuenHo = new LatLng(22.324840699495795, 114.16169951621694);
+        mMap.addMarker(new MarkerOptions().position(PaoYuenHo).title("Paper Craft shop: Pao Yuen Ho"));
+
+        LatLng Fook_Sang_Cheung= new LatLng(22.322181448035753, 114.17082102617307);
+        mMap.addMarker(new MarkerOptions().position(Fook_Sang_Cheung).title("Paper Craft shop: Fook Sang Cheung"));
+
+
+
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED){
             mMap.setMyLocationEnabled(true);
