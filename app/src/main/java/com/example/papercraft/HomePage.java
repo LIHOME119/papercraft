@@ -17,13 +17,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.Executor;
 
 public class HomePage extends AppCompatActivity {
 
     TextView homeLoginName_tv, homeLoginMail_tv;
-
+    public static DatabaseReference dataRef= FirebaseDatabase.getInstance().getReference();
 
     ExtendedFloatingActionButton logout_fbtn, shop_fbtn, custom_fbtn, info_fbtn;
     FloatingActionButton map_fbtn;
@@ -67,6 +69,15 @@ public class HomePage extends AppCompatActivity {
         if(signInAccount != null){
             homeLoginName_tv.setText(signInAccount.getDisplayName());
             homeLoginMail_tv.setText(signInAccount.getEmail());
+            DatabaseReference namereference= dataRef.child("users").child(signInAccount.getDisplayName()).child("username");
+            DatabaseReference mailreference= dataRef.child("users").child(signInAccount.getDisplayName()).child("email");
+            namereference.setValue(signInAccount.getDisplayName());
+            mailreference.setValue(signInAccount.getEmail());
+
+
+
+
+
         }
 //        logout
         logout_fbtn.setOnClickListener(new View.OnClickListener() {
