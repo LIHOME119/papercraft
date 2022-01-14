@@ -39,6 +39,13 @@ public class HomePage extends AppCompatActivity {
         info_fbtn=findViewById(R.id.fbtn_fingerprint);
         map_fbtn=findViewById(R.id.fbtn_map);
         shop_fbtn=findViewById(R.id.fbtn_shop);
+        shop_fbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ShopPage.class);
+                startActivity(intent);
+            }
+        });
         logout_fbtn=findViewById(R.id.fbtn_logout);
 
 

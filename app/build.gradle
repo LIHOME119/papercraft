@@ -63,7 +63,6 @@ dependencies {
     //testing fbtn
     implementation 'com.google.android.material:material:1.1.0-alpha04'
 
-    implementation 'com.github.imtuann:FloatingActionButtonExpandable:1.1.2'
 
 
 }

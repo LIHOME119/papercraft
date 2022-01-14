@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopPage">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/shop_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cd_god1"
+                android:layout_width="360dp"
+                android:layout_height="470dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/img_god1"
+                        android:layout_width="360dp"
+                        android:layout_height="300dp"
+                        android:background="@color/black"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/pgod1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_god1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text=" Burning Package x1 \n Basic Paper craft x1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_god1" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_god1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_baseline_expand_more_24"
+                        app:layout_constraintEnd_toStartOf="@+id/edt_god1"
+                        app:layout_constraintTop_toBottomOf="@id/img_god1"/>
+
+                    <TextView
+                        android:id="@+id/edt_god1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="50dp"
+                        android:textSize="30sp"
+                        app:layout_constraintStart_toEndOf="@id/tv_god1"
+                        app:layout_constraintTop_toBottomOf="@id/img_god1" />
+                    <ImageButton
+                        android:id="@+id/imgbtn_god1A"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_baseline_expand_less_24"
+                        app:layout_constraintStart_toEndOf="@+id/edt_god1"
+                        app:layout_constraintTop_toBottomOf="@id/img_god1"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cd_god2"
+                android:layout_width="360dp"
+                android:layout_height="470dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toEndOf="@+id/cd_god1"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/img_god2"
+                        android:layout_width="360dp"
+                        android:layout_height="300dp"
+                        android:background="@color/black"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/pgod2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_god2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text=" Burning Package x1 \n Paper craft x10 \n Paper money Package x10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_god2" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_god2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_baseline_expand_more_24"
+                        app:layout_constraintEnd_toStartOf="@+id/edt_god2"
+                        app:layout_constraintTop_toBottomOf="@id/img_god2"/>
+
+                    <TextView
+                        android:id="@+id/edt_god2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="50dp"
+                        android:textSize="30sp"
+
+                        app:layout_constraintStart_toEndOf="@id/tv_god2"
+                        app:layout_constraintTop_toBottomOf="@id/img_god2" />
+                    <ImageButton
+                        android:id="@+id/imgbtn_god2A"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_baseline_expand_less_24"
+                        app:layout_constraintStart_toEndOf="@+id/edt_god2"
+                        app:layout_constraintTop_toBottomOf="@id/img_god2"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cd_god3"
+                android:layout_width="360dp"
+                android:layout_height="470dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toEndOf="@+id/cd_god2"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/img_god3"
+                        android:layout_width="360dp"
+                        android:layout_height="300dp"
+                        android:background="@color/black"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/god3jpg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tv_god3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text=" Burning Package x5 \n Paper craft x50 \n Paper money Package x50 \n Full set Paper craft x10 \n Best Paper craft Package x10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_god3" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_god3"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_baseline_expand_more_24"
+                        app:layout_constraintEnd_toStartOf="@+id/edt_god3"
+                        app:layout_constraintTop_toBottomOf="@id/img_god3"/>
+
+                    <TextView
+                        android:id="@+id/edt_god3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="50dp"
+                        android:textSize="30sp"
+                        app:layout_constraintStart_toEndOf="@id/tv_god3"
+                        app:layout_constraintTop_toBottomOf="@id/img_god3" />
+                    <ImageButton
+                        android:id="@+id/imgbtn_god3A"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_baseline_expand_less_24"
+                        app:layout_constraintStart_toEndOf="@+id/edt_god3"
+                        app:layout_constraintTop_toBottomOf="@id/img_god3"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+
+                app:layout_constraintStart_toEndOf="@+id/cd_god3"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fbtn_shopfire"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/red"
+        app:icon="@drawable/ic_baseline_fireplace_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fbtn_shopDone" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fbtn_shopDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/white"
+        app:icon="@drawable/ic_baseline_credit_score_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
