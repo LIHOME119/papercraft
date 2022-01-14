@@ -188,6 +188,7 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
         }
 
     }
+    //
     private Boolean validatePw(){
         String val = loginPassword_edt.getEditText().getText().toString();
 
@@ -212,6 +213,7 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
         }
     }
 
+    //login
     private void isUser() {
 
          String userEnteredUsername = loginUsername_edt.getEditText().getText().toString().trim();
