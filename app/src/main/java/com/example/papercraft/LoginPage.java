@@ -169,6 +169,7 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
         Toast.makeText(LoginPage.this,text,Toast.LENGTH_SHORT).show();
 
     }
+    //validtae for username
     private Boolean validateName(){
         String val = loginUsername_edt.getEditText().getText().toString();
 
@@ -188,7 +189,7 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
         }
 
     }
-    //
+    //validate for password
     private Boolean validatePw(){
         String val = loginPassword_edt.getEditText().getText().toString();
 
