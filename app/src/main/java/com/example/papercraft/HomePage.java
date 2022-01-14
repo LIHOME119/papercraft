@@ -46,7 +46,7 @@ public class HomePage extends AppCompatActivity {
 
         GifImageView imageView1=findViewById(R.id.home_background);
         try {
-            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.burning3);
+            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.homeback2);
             imageView1.setImageDrawable(gifDrawable);
         } catch (IOException e) {
             e.printStackTrace();
