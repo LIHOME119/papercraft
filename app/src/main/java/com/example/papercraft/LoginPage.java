@@ -240,6 +240,7 @@ public class LoginPage extends AppCompatActivity implements SignUpFragment.Botto
 
                     if(passwordFromDB.equals(userEnteredPassword)){
                         HomePage.user=userEnteredUsername;
+                        Toast.makeText(getApplicationContext(),"You are sucessful login "+userEnteredUsername, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), HomePage.class);
                         startActivity(intent);
                     }else {
